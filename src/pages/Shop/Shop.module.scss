@@ -1,0 +1,78 @@
+.shop {
+  min-height: 100vh;
+  position: relative;
+}
+
+.filterWrap {
+  //position: relative;
+  display: flex;
+  flex-direction: row;
+
+  position: fixed;
+  height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  width: 50px;
+}
+
+.dressWrap {
+  z-index: 2;
+  position: relative;
+  margin: {
+    top: 50px;
+    bottom: 50px;
+    left: 100px;
+  };
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: start;
+  max-width: 1000px;
+  
+  @media screen and (min-width: 1200px) {
+    margin: 50px auto;
+  }
+}
+
+.filters {
+  position: fixed;
+  left: 0;
+  width: 0;
+  top: 0;
+  height: 100vh;
+  background-color: rgba(0,0,0, 0.8);
+  z-index: 5;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.filtersBtn {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  position: fixed;
+  top: 0;
+  width: 50px;
+  background-color: white;
+  border-right: 10px solid black;
+  z-index: 5;
+
+  &:hover {
+    background-color: coral;
+  }
+
+  img {
+    height: 40px;
+    width: 40px;
+  }
+}

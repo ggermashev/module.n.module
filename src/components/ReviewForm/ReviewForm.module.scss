@@ -1,0 +1,60 @@
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 30px;
+  position: relative;
+  padding-bottom: 20px;
+
+}
+
+.description {
+  width: 90%;
+  max-width: 500px;
+}
+
+.rating {
+  width: 90%;
+  max-width: 500px;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-height: 150px;
+  overflow-y: auto;
+  width: 100%;
+  gap: 20px;
+
+  img {
+    height: 100px;
+    width: auto;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.imageWrap {
+  position: relative;
+  padding: 20px;
+}
+
+.deleteIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

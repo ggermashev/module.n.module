@@ -1,0 +1,60 @@
+.select {
+  user-select: none;
+  min-width: 200px;
+  position: relative;
+}
+
+.field {
+  height: 50px;
+  min-width: 200px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1em 1em 0 0;
+  border-bottom: 1px solid black;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  p {
+    margin-left: 10px;
+    font-size: 1.2em;
+  }
+
+  img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+  }
+}
+
+.options {
+  position: absolute;
+  max-height: 150px;
+  height: 0;
+  width: 100%;
+  display: none;
+  opacity: 0;
+  overflow-y: auto;
+  border-radius: 0 0 1em 1em;
+}
+
+.option {
+  height: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 1.2em;
+  }
+
+  &:hover {
+    background-color: coral;
+    cursor: pointer;
+  }
+}

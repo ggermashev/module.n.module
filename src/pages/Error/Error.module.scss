@@ -1,0 +1,24 @@
+.error {
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    h1 {
+      font-size: 1.4em;
+    }
+  }
+}

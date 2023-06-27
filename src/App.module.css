@@ -1,0 +1,18 @@
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+html {
+  height: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+/*# sourceMappingURL=App.module.css.map */

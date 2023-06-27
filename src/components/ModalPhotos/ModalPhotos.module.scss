@@ -1,0 +1,17 @@
+.modalPhotos {
+  display: flex;
+  max-height: 60vh;
+  flex-direction: row;
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  gap: 20px;
+  padding: 20px;
+
+
+  img {
+    height: 200px;
+    width: auto;
+  }
+}

@@ -1,0 +1,22 @@
+
+.socialLink {
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: coral;
+    }
+  }
+
+  img {
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+  }
+
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
