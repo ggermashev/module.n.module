@@ -14,15 +14,34 @@ import ModalPhotos from "../../components/ModalPhotos/ModalPhotos";
 import {IDress} from "../../types/types";
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import ReplyIcon from '@mui/icons-material/Reply';
+import {useDispatch} from "react-redux";
+import {useAppDispatch} from "../../redux";
+import {addProduct} from "../../redux/Basket";
 
 
-const Dress: FC<IDress | any> = ({id, title, module, description, price, images, rating }) => {
+const Dress = () => {
+
+    const [dress, setDress] = useState<IDress>()
+
 
     const params = useParams()
     const navigate = useNavigate()
 
+    const dispatch = useAppDispatch()
+
     useEffect(() => {
         window.scrollTo(0, 0)
+
+        setDress({
+            id: 0,
+            title: "title",
+            module: "module",
+            description: "description",
+            price: 4400,
+            images: [require('../../images/dress1.png')],
+            rating: 4.7
+        })
+
     }, [])
 
     const [userRating, setUserRating] = useState(0)
@@ -56,7 +75,9 @@ const Dress: FC<IDress | any> = ({id, title, module, description, price, images,
     return (
         <div className={style.dress}>
             <ReplyIcon
-                onClick={() => {navigate(-1)}} className={style.back}
+                onClick={() => {
+                    navigate(-1)
+                }} className={style.back}
             />
             <div className={style.wrap}>
                 <div className={style.header}>
@@ -88,7 +109,9 @@ const Dress: FC<IDress | any> = ({id, title, module, description, price, images,
                         />
                         <div className={style.row}>
                             <p>5600 Р</p>
-                            <ShoppingBasketIcon/>
+                            <ShoppingBasketIcon onClick={() => {
+                                dispatch(addProduct(dress))
+                            }}/>
                         </div>
                     </div>
                     <div className={style.description}>

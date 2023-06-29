@@ -1,6 +1,6 @@
 {
   "name": "module_and_module",
-  "homepage": "/module.n.module",
+  "homepage": "module.n.module/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -31,6 +31,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -56,6 +58,7 @@
   },
   "devDependencies": {
     "@types/react-css-modules": "^4.6.4",
+    "gh-pages": "^5.0.0",
     "typescript-plugin-css-modules": "^5.0.1"
   }
 }
