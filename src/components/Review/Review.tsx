@@ -1,6 +1,7 @@
 import React, {FC, useState} from 'react';
 import style from "./Review.module.scss"
 import ModalPhotos from "../ModalPhotos/ModalPhotos";
+import WebStoriesIcon from '@mui/icons-material/WebStories';
 
 interface IReview {
     userName: string,
@@ -24,7 +25,8 @@ const Review: FC<IReview> = ({userName, rating, review, images}) => {
             </div>
             <div className={style.content}>
                 <p>{review}</p>
-                {images && <img onClick={() => {setShowPhotos(true)}} src={require('../../images/photo.png')}/>}
+                {images && <WebStoriesIcon onClick={() => {setShowPhotos(true)}}/>}
+                {/*{images && <img onClick={() => {setShowPhotos(true)}} src={require('../../images/photo.png')}/>}*/}
             </div>
             {showPhotos && images && <ModalPhotos images={images} onClose={() => setShowPhotos(false)}/>}
         </div>

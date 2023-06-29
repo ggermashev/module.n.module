@@ -1,0 +1,50 @@
+.order {
+  width: 100%;
+  min-height: 100px;
+  border-radius: 1em;
+  background-color: rgba(0,0,0,0.05);
+  padding: 10px;
+  position: relative;
+
+  p.price {
+    float: left;
+    color: coral;
+  }
+}
+
+.header {
+  min-height: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content {
+  min-height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  
+  @media screen and (max-width: 600px){
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 0;
+  }
+}
+
+.productsWrap {
+  padding: 20px;
+  max-height: 50vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: center;
+  width: 90%;
+  max-width: 1000px;
+  gap: 20px;
+  overflow-y: auto;
+}

@@ -6,6 +6,10 @@ import gsap from "gsap"
 import Card from "../../components/Card/Card";
 import RangeInput from "../../components/RangeInput/RangeInput";
 import Select from "../../components/Select/Select";
+import {useDispatch} from "react-redux";
+import {addProduct} from "../../redux/Basket";
+import {IDress} from "../../types/types";
+import {useAppDispatch} from "../../redux";
 
 
 const Filters = () => {
@@ -47,7 +51,8 @@ const Filters = () => {
                         maxValue={20000} minValue={0} step={500}/>
             <RangeInput title={"Цена до"} value={maxPrice} setValue={setMaxPrice}
                         maxValue={20000} minValue={0} step={500}/>
-            <Select title={"Модуль"} options={["body", "hand"]} value={module} defaultOption={"all"} setValue={val => setModule(val)}/>
+            <Select title={"Модуль"} options={["body", "hand"]} value={module} defaultOption={"all"}
+                    setValue={val => setModule(val)}/>
         </div>
         <Button id={"filter-btn"} className={style.filtersBtn} onClick={() => {
             onFilters()
@@ -60,9 +65,63 @@ const Filters = () => {
 
 const Shop = () => {
 
+    const [dress, setDress] = useState<IDress[]>([])
+
     useEffect(() => {
         window.scrollTo(0, 0)
+
+        setDress([
+            {
+                id: 0,
+                title: "title",
+                module: "module",
+                description: "description",
+                price: 5500,
+                images: [require('../../images/dress1.png')],
+                rating: 4.4,
+            },
+            {
+                id: 1,
+                title: "title",
+                module: "module",
+                description: "description",
+                price: 5500,
+                images: [require('../../images/dress1.png')],
+                rating: 4.4,
+            },
+            {
+                id: 2,
+                title: "title",
+                module: "module",
+                description: "description",
+                price: 5500,
+                images: [require('../../images/dress1.png')],
+                rating: 4.4,
+            },
+            {
+                id: 3,
+                title: "title",
+                module: "module",
+                description: "description",
+                price: 5500,
+                images: [require('../../images/dress1.png')],
+                rating: 4.4,
+            },
+            {
+                id: 4,
+                title: "title",
+                module: "module",
+                description: "description",
+                price: 5500,
+                images: [require('../../images/dress1.png')],
+                rating: 4.4,
+            },
+
+        ])
+
     }, [])
+
+    const dispatch = useAppDispatch()
 
     return (
         <div className={style.shop}>
@@ -70,23 +129,18 @@ const Shop = () => {
             <Filters/>
 
             <div className={style.dressWrap}>
-                <Card id={0} title={"title"} img={require('../../images/dress1.png')} module={"Рукав"} rating={5} price={5000}/>
-                <Card id={1} title={"title"} img={require('../../images/dress2.png')} module={"Рукав"} rating={4.3}
-                      price={6500}/>
-                <Card id={2} title={"title"} img={require('../../images/dress1.png')} module={"Рукав"} rating={5} price={5000}/>
-                <Card id={3} title={"title"} img={require('../../images/dress2.png')} module={"Рукав"} rating={4.3}
-                      price={6500}/>
-                <Card id={4} title={"title"} img={require('../../images/dress1.png')} module={"Рукав"} rating={5} price={5000}/>
-                <Card id={5} title={"title"} img={require('../../images/dress2.png')} module={"Рукав"} rating={4.3}
-                      price={6500}/>
-                <Card id={6} title={"title"} img={require('../../images/dress1.png')} module={"Рукав"} rating={5} price={5000}/>
-                <Card id={7} title={"title"} img={require('../../images/dress2.png')} module={"Рукав"} rating={4.3}
-                      price={6500}/>
-                <Card id={8} title={"title"} img={require('../../images/dress1.png')} module={"Рукав"}
-                                          rating={5} price={5000}/>
-                <Card id={9} title={"title"} img={require('../../images/dress2.png')} module={"Рукав"} rating={4.3}
-                      price={6500}/>
-
+                {dress.map(d =>
+                    <Card id={d.id}
+                          title={d.title}
+                          images={d.images}
+                          module={d.module}
+                          rating={d.rating}
+                          price={d.price}
+                          onAction={() => {
+                              dispatch(addProduct(d))
+                          }}
+                    />
+                )}
             </div>
         </div>
     );

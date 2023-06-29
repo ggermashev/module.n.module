@@ -1,0 +1,51 @@
+.basket {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin: 50px auto;
+
+  .items {
+    max-width: 1000px;
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    @media screen and (max-width: 767px) {
+      justify-content: center;
+    }
+
+    .basketItem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+
+      .counter {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        svg {
+          &:hover {
+            color: coral;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  button {
+    font-size: 1.2em;
+  }
+
+}

@@ -7,6 +7,8 @@ import Footer from "./pages/Footer/Footer";
 import Navigation from "./components/Navigation/Navigation";
 import Shop from "./pages/Shop/Shop";
 import Dress from "./pages/Dress/Dress";
+import Profile from "./pages/Profile/Profile";
+import Basket from "./pages/Basket/Basket";
 
 function App() {
 
@@ -19,8 +21,8 @@ function App() {
                         <Route path={"/"} element={<Main/>}/>
                         <Route path={"/shop"} element={<Shop/>}/>
                         <Route path={"/shop/dress/:id"} element={<Dress/>}/>
-                        <Route path={"/profile"} element={<Main/>}/>
-                        <Route path={"/basket"} element={<Main/>}/>
+                        <Route path={"/profile"} element={<Profile/>}/>
+                        <Route path={"/basket"} element={<Basket/>}/>
                         <Route path={"*"} element={<Error/>}/>
 
                     </Routes>

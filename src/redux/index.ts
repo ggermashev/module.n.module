@@ -1,10 +1,11 @@
 import {combineReducers, createStore} from "redux";
 import {configureStore} from "@reduxjs/toolkit";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
+import Basket from "./Basket";
 
 
 const rootReducer = combineReducers({
-
+    basket: Basket
 })
 
 export const store = configureStore({

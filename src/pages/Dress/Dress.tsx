@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {FC, useCallback, useEffect, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import style from "./Dress.module.scss"
 import {Rating} from "@mui/material";
@@ -11,9 +11,12 @@ import ReviewForm from "../../components/ReviewForm/ReviewForm";
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import gsap from "gsap"
 import ModalPhotos from "../../components/ModalPhotos/ModalPhotos";
+import {IDress} from "../../types/types";
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import ReplyIcon from '@mui/icons-material/Reply';
 
 
-const Dress = () => {
+const Dress: FC<IDress | any> = ({id, title, module, description, price, images, rating }) => {
 
     const params = useParams()
     const navigate = useNavigate()
@@ -52,9 +55,9 @@ const Dress = () => {
 
     return (
         <div className={style.dress}>
-            <img onClick={() => {
-                navigate(-1)
-            }} className={style.back} src={require('../../images/back.png')}/>
+            <ReplyIcon
+                onClick={() => {navigate(-1)}} className={style.back}
+            />
             <div className={style.wrap}>
                 <div className={style.header}>
                     <p>Название(Модуль)</p>
@@ -85,39 +88,26 @@ const Dress = () => {
                         />
                         <div className={style.row}>
                             <p>5600 Р</p>
-                            <img src={require('../../images/bag.png')}/>
+                            <ShoppingBasketIcon/>
                         </div>
                     </div>
                     <div className={style.description}>
                         <p>
-                            Тут написан очень полезный текст. перечитывай трижды. Тут написан очень полезный
-                            текст. перечитывай трижды.
-                            Тут написан очень полезный текст. перечитывай трижды. Тут написан очень полезный
-                            текст. перечитывай трижды.
-                            Тут написан очень полезный текст. перечитывай трижды. Тут написан очень полезный
-                            текст. перечитывай трижды.
-                            Тут написан очень полезный текст. перечитывай трижды. Тут написан очень полезный
-                            текст. перечитывай трижды.
-                            Тут написан очень полезный текст. перечитывай трижды. Тут написан очень полезный
-                            текст. перечитывай трижды.
-                            Тут написан очень полезный текст. перечитывай трижды. Тут написан очень полезный
-                            текст. перечитывай трижды.
-                            Тут написан очень полезный текст. перечитывай трижды. Тут написан очень полезный
-                            текст. перечитывай трижды.
+                            Описание
                         </p>
                     </div>
                 </div>
                 <div className={style.reviews}>
                     <h1>Отзывы</h1>
 
-                    <Review userName={"Ребиков Антон"} rating={5} review={"Тут есть фотки!!!!"}
+                    <Review userName={"Фамилия Имя"} rating={5} review={"Тут есть фотки!!!!"}
                             images={[require('../../images/dress1.png'), require('../../images/dress2.png'),
                                 require('../../images/dress1.png'), require('../../images/dress2.png'),
                                 require('../../images/dress1.png'), require('../../images/dress2.png'),
                                 require('../../images/dress1.png'), require('../../images/dress2.png'),
                                 require('../../images/dress1.png'), require('../../images/dress2.png'),]
                             }/>
-                    <Review userName={"Ребиков Антон"} rating={2} review={"Тут нет фоток(((((((("}/>
+                    <Review userName={"Фамилия Имя"} rating={2} review={"Тут нет фоток(((((((("}/>
 
                     <div className={style.pagination}>
                         <KeyboardDoubleArrowLeftIcon className={style.arrow}/>
