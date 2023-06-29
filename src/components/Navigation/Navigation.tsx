@@ -4,6 +4,7 @@ import {Link, useLocation} from "react-router-dom";
 import gsap from "gsap"
 import {useAppSelector} from "../../redux";
 import Notification from "../Notification/Notification";
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Navigation = () => {
 
@@ -104,9 +105,7 @@ const Navigation = () => {
                             </div>
                         </div>
                         <div className={style.right}>
-                            <img onClick={() => {
-                                openMenu()
-                            }} src={require('../../images/menu.png')}/>
+                            <MenuIcon onClick={() => {openMenu()}}/>
                         </div>
                     </>
                 }

@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-      <BrowserRouter basename={"/module&module"}>
+      <BrowserRouter basename={"/module.n.module"}>
           <Provider store={store}>
               <App />
           </Provider>
