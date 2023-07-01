@@ -53,6 +53,7 @@ const Filters = () => {
                         maxValue={20000} minValue={0} step={500}/>
             <Select title={"Модуль"} options={["body", "hand"]} value={module} defaultOption={"all"}
                     setValue={val => setModule(val)}/>
+            <Button onClick={() => {}}><p>Применить</p></Button>
         </div>
         <Button id={"filter-btn"} className={style.filtersBtn} onClick={() => {
             onFilters()

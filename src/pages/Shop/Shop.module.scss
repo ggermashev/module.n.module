@@ -49,6 +49,17 @@
   align-items: center;
   justify-content: center;
   gap: 40px;
+
+
+  button {
+    background-color: white;
+    color: black;
+    font-size: 1.05em;
+
+    &:hover {
+      color: coral;
+    }
+  }
 }
 
 .filtersBtn {
