@@ -83,6 +83,9 @@ const Navigation = () => {
                                 <Link to={"/shop"}>Магазин</Link>
                             </div>
                             <div className={`${style.link} ${location.pathname === '/profile' && style.active}`}>
+                                {basket.countNewOrders > 0 &&
+                                    <Notification><p>{basket.countNewOrders}</p></Notification>
+                                }
                                 <Link to={"/profile"}>Профиль</Link>
                             </div>
                             <div className={`${style.link} ${location.pathname === '/basket' && style.active}`}>
@@ -119,6 +122,9 @@ const Navigation = () => {
                     <Link to={"/shop"}>Магазин</Link>
                 </div>
                 <div onClick={() => openMenu()} className={`${style.link} ${location.pathname === '/profile' && style.active}`}>
+                    {basket.countNewOrders > 0 &&
+                        <Notification><p>{basket.countNewOrders}</p></Notification>
+                    }
                     <Link to={"/profile"}>Профиль</Link>
                 </div>
                 <div onClick={() => openMenu()} className={`${style.link} ${location.pathname === '/basket' && style.active}`}>

@@ -1,10 +1,10 @@
 import React, {FC, useRef, useState} from 'react';
 import style from "./ReviewForm.module.scss"
 import ModalWindow from "../ModalWindow/ModalWindow";
-import CloseIcon from '@mui/icons-material/Close';
 import {Rating, TextField} from "@mui/material";
 import Button from "../Button/Button";
 import DeleteIcon from '@mui/icons-material/Delete';
+import TextInput from "../TextInput/TextInput";
 
 interface IReviewForm {
     onClose: () => void,
@@ -21,7 +21,8 @@ const ReviewForm: FC<IReviewForm> = ({onClose, onSubmit, rating}) => {
             <div className={style.reviewForm}>
                 <h1>Оставьте отзыв!</h1>
                 <div className={style.description}>
-                    <TextField value={review} onChange={e => setReview(e.target.value)} className={style.description} multiline rows={4} label="Отзыв" variant="outlined" />
+                    <TextInput multiline={true} className={style.description} label={"Отзыв"} value={review} setValue={setReview}/>
+                    {/*<TextField value={review} onChange={e => setReview(e.target.value)} className={style.description} multiline rows={4} label="Отзыв" variant="outlined" />*/}
                     <Rating className={style.rating} value={rating} readOnly/>
                 </div>
                 <div className={style.row}>

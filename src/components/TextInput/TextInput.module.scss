@@ -1,0 +1,40 @@
+.textInput {
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3, p {
+    align-self: start;
+  }
+
+  p {
+    font-size: 0.7em;
+    color: red;
+  }
+
+  input, textarea {
+    margin: 0 auto;
+    height: 2.5em;
+    width: 100%;
+    border-radius: 1em;
+    border: 1px solid black;
+    max-width: 400px;
+
+    &:focus {
+      border-color: coral;
+      outline: none;
+    }
+  }
+
+  textarea {
+    min-height: 5em;
+    max-height: 10em;
+    resize: vertical;
+    max-width: 400px;
+    padding: 10px;
+  }
+
+}

@@ -7,7 +7,8 @@ const Basket = createSlice({
     initialState: {
         id: 0,
         products: [] as BasketItem[],
-        countNewProducts: 0
+        countNewProducts: 0,
+        countNewOrders: 0,
     },
     reducers: {
         addProduct(state, action) {
@@ -20,6 +21,9 @@ const Basket = createSlice({
         removeProduct(state, action) {
             state.products = state.products.filter(product => product.product.id !== action.payload)
         },
+        clearProducts(state) {
+          state.products = []
+        },
         increaseCount(state, action) {
             state.products[action.payload].count++
         },
@@ -30,6 +34,12 @@ const Basket = createSlice({
         },
         clearNewProducts(state) {
             state.countNewProducts = 0
+        },
+        clearNewOrders(state) {
+            state.countNewOrders = 0
+        },
+        addNewOrder(state) {
+          state.countNewOrders++
         }
 
     }
@@ -39,7 +49,10 @@ export default Basket.reducer
 export const {
     addProduct,
     removeProduct,
+    clearProducts,
     increaseCount,
     decreaseCount,
-    clearNewProducts
+    clearNewProducts,
+    clearNewOrders,
+    addNewOrder
 } = Basket.actions

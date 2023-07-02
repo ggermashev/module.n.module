@@ -6,12 +6,22 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import Button from "../../components/Button/Button";
 import {useAppDispatch, useAppSelector} from "../../redux";
-import {clearNewProducts, decreaseCount, increaseCount, removeProduct} from "../../redux/Basket";
+import {
+    addNewOrder,
+    clearNewProducts,
+    clearProducts,
+    decreaseCount,
+    increaseCount,
+    removeProduct
+} from "../../redux/Basket";
+import ModalWindow from "../../components/ModalWindow/ModalWindow";
 
 const Basket = () => {
 
     const basket = useAppSelector(state => state.basket)
     const dispatch = useAppDispatch()
+
+    const [showModal, setShowModal] = useState(false)
 
     useEffect(() => {
         dispatch(clearNewProducts())
@@ -48,10 +58,28 @@ const Basket = () => {
                         )}
                     </div>
                     <Button onClick={() => {
+                        setShowModal(true)
                     }}><p>Оформить заказ</p></Button>
                 </>
                 : <h1>Корзина пуста</h1>
 
+            }
+            {showModal &&
+                <ModalWindow onClose={() => {
+                    setShowModal(false)
+                }}>
+                    <div className={style.submitOrder}>
+                        <h3>К оплате: 3333 Р</h3>
+                        <div className={style.row}>
+                            <Button onClick={() => {setShowModal(false)}}>Назад</Button>
+                            <Button onClick={() => {
+                                dispatch(addNewOrder())
+                                dispatch(clearProducts())
+                                setShowModal(false)
+                            }}>Подтвердить</Button>
+                        </div>
+                    </div>
+                </ModalWindow>
             }
         </div>
     );

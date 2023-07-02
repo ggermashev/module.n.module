@@ -6,7 +6,7 @@ import {Grid} from "@mui/material";
 
 const Footer = () => {
     return (
-        <div className={style.footer}>
+        <div id={"footer"} className={style.footer}>
             <h1>Модуль&Модуль</h1>
                 <Grid container className={style.links} spacing={2}>
                     <Grid className={style.linkWrap} item md={3} sm={6} xs={6}>

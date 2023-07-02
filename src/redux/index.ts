@@ -2,10 +2,12 @@ import {combineReducers, createStore} from "redux";
 import {configureStore} from "@reduxjs/toolkit";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import Basket from "./Basket";
+import User from "./User";
 
 
 const rootReducer = combineReducers({
-    basket: Basket
+    basket: Basket,
+    user: User
 })
 
 export const store = configureStore({

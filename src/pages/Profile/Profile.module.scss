@@ -30,6 +30,17 @@
   h3 {
     float: left;
     margin-left: 20px;
+
+    svg {
+      height: 20px;
+      width: 20px;
+      margin-left: 5px;
+
+      &:hover {
+        cursor: pointer;
+        color: coral;
+      }
+    }
   }
   p{
     float: right;
@@ -48,4 +59,25 @@
   position: relative;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.inputs {
+  padding: 40px 0;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+  }
 }
